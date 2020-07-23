@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClientService, User } from './../service/http-client.service';
 
 @Component({
@@ -9,6 +9,9 @@ import { HttpClientService, User } from './../service/http-client.service';
 export class ViewPerformanceComponent implements OnInit {
 
   users: User[]=[];
+  p: number = 1;
+  count:number =5;
+  @Output() onSeePerformance = new EventEmitter<User>();
 
   constructor(private httpService: HttpClientService) { }
 
@@ -20,7 +23,8 @@ export class ViewPerformanceComponent implements OnInit {
 
   onViewPerformanceClick(user){
     console.log("View Performance button clicked.");
-    alert("Request to view Performance....Of "+user.id+" "+user.firstname);
+    //alert("Request to view Performance....Of "+user.id+" "+user.firstname);
+    this.onSeePerformance.emit(user);
   }
 
 }

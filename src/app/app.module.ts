@@ -8,6 +8,8 @@ import { ProvideFeedbackComponent } from './provide-feedback/provide-feedback.co
 import { ViewPerformanceComponent } from './view-performance/view-performance.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrainingModuleComponent } from './training-module/training-module.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SeePerformanceComponent } from './see-performance/see-performance.component';
 
 
 
@@ -17,14 +19,17 @@ import { TrainingModuleComponent } from './training-module/training-module.compo
     HeaderComponent,
     ProvideFeedbackComponent,
     ViewPerformanceComponent,
-    TrainingModuleComponent
+    TrainingModuleComponent,
+    SeePerformanceComponent,
+    
     
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
